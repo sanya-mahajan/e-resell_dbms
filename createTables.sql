@@ -11,4 +11,5 @@ CREATE TABLE ORDERS(O_ID INTEGER PRIMARY KEY,
                     AMOUNT INTEGER,
                     ORDERDATE DATE,
                     ORDERTIME TIME[0],
-                    STATUS_ID INTEGER);
+                    STATUS_ID INTEGER,
+                    BUYER_ID INTEGER);
