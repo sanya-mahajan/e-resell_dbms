@@ -6,15 +6,6 @@ CREATE TABLE PRODUCT(P_ID INTEGER PRIMARY KEY,
                      PRICE INTEGER,
                      QUANTITY INTEGER);
                      
-CREATE TABLE ORDERS(O_ID INTEGER PRIMARY KEY,
-                    AD_ID INTEGER REFERENCES ADS(AD_ID),
-                    AMOUNT INTEGER,
-                    ORDERDATE DATE,
-                    STATUS_ID INTEGER REFERENCES STATUS(STATUS_ID),
-                    BUYER_ID INTEGER REFERENCES USERS(U_ID));                     
-                     
-                 
-
 CREATE TABLE USERS (U_ID INTEGER PRIMARY KEY,
     FIRSTNAME VARCHAR(15),
     LASTNAME VARCHAR(15),
@@ -29,7 +20,19 @@ CREATE TABLE ADS(
     CREATED_AT DATE,
     VIEWS INTEGER
         
-);
+);                     
+                     
+                     
+CREATE TABLE ORDERS(O_ID INTEGER PRIMARY KEY,
+                    AD_ID INTEGER REFERENCES ADS(AD_ID),
+                    AMOUNT INTEGER,
+                    ORDERDATE DATE,
+                    STATUS_ID INTEGER REFERENCES STATUS(STATUS_ID),
+                    BUYER_ID INTEGER REFERENCES USERS(U_ID));                     
+                     
+                 
+
+
 CREATE TABLE USER_REVIEWS(
     U_ID INTEGER NOT NULL REFERENCES USERS(U_ID),
     REVIEW VARCHAR(200)
